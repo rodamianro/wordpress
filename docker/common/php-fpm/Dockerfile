@@ -43,9 +43,6 @@ RUN curl -o /usr/local/bin/php-fpm-healthcheck \
     https://raw.githubusercontent.com/renatomefi/php-fpm-healthcheck/master/php-fpm-healthcheck \
     && chmod +x /usr/local/bin/php-fpm-healthcheck
 
-COPY ./docker/production/php-fpm/entrypoint.sh /usr/local/bin/entrypoint.sh
-RUN chmod +x /usr/local/bin/entrypoint.sh
-
 COPY --from=builder /usr/local/lib/php/extensions/ /usr/local/lib/php/extensions/
 COPY --from=builder /usr/local/etc/php/conf.d/ /usr/local/etc/php/conf.d/
 COPY --from=builder /usr/local/bin/docker-php-ext-* /usr/local/bin/
@@ -59,7 +56,6 @@ WORKDIR /var/www/public
 RUN chown -R www-data:www-data /var/www
 
 USER www-data
-ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
 EXPOSE 9000
 CMD ["php-fpm"]
 
