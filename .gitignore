@@ -49,3 +49,5 @@ wp-config-local.php
 #/wp-content/themes
 .env
 info.*
+database/backups/
+# Ignore the following files in the root directory
