@@ -19,6 +19,7 @@
 
 # Configuration
 wp-config.php
+wp-config-local.php
 
 # Example themes
 /wp-content/themes/twenty*/
@@ -46,3 +47,5 @@ wp-config.php
 # Note: If you wish to whitelist themes,
 # uncomment the next line
 #/wp-content/themes
+.env
+info.*
