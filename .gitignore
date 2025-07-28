@@ -50,4 +50,5 @@ wp-config-local.php
 .env
 info.*
 database/backups/
+node_modules
 # Ignore the following files in the root directory
