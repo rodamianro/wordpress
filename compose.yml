@@ -9,11 +9,6 @@ services:
     environment:
       NGINX_HOST: ${APP_HOST:-_}
       NGINX_PORT: ${APP_PORT:-80}
-      DB_HOST: ${DB_HOST:-mysql}
-      DB_NAME: ${MYSQL_DATABASE:-wordpress}
-      DB_USER: ${MYSQL_USER:-wordpress}
-      DB_PASSWORD: ${MYSQL_PASSWORD:-wordpress}
-      DB_CHARSET: ${DB_CHARSET:-utf8mb4}
     networks:
       - wordpress-development
     depends_on:
