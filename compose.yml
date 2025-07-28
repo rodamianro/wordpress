@@ -64,8 +64,11 @@ services:
         condition: service_started
   node:
     build:
-      context: ./docker/development/node
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: ./docker/development/node/Dockerfile
+      args:
+        UID: ${UID:-1000}
+        GID: ${GID:-1000}
     tty: true
     volumes:
       - ./wordpress/wp-content/plugins:/home/node/app
