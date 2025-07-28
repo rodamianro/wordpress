@@ -20,3 +20,20 @@ function assets()
 }
 
 add_action('wp_enqueue_scripts', 'assets');
+
+function sidebar()
+{
+    register_sidebar(
+        array(
+            'name' => __('Pie de página', 'platzigifts'),
+            'id' => 'footer',
+            'description' => __('Zona de widgets para pie de página', 'platzigifts'),
+            'before_title' => '<p>',
+            'after_title' => '</p>',
+            'before_widget' => '<div id="%1$s" class="%2$s">',
+            'after_widget' => '</div>',
+        )
+    );
+}
+
+add_action('widgets_init', 'sidebar');
