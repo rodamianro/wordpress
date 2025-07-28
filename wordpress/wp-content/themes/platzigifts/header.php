@@ -10,3 +10,8 @@
 </head>
 
 <body>
+    <header>
+        <div class="grid grid-flow-col gri-col-3 bg-black">
+            <div> <img src="<?php echo get_template_directory_uri() ?>/assets/img/logo.png" alt="PlatziGifts Logo"> </div>
+        </div>
+    </header>
