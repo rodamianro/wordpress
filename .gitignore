@@ -52,4 +52,5 @@ info.*
 database/backups/
 node_modules
 compose.override.yml
+uploads
 # Ignore the following files in the root directory
