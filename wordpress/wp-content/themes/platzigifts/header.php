@@ -11,7 +11,14 @@
 
 <body>
     <header>
-        <div class="grid grid-flow-col gri-col-3 bg-black">
+        <div class="flex flex-row justify-between items-center gap-4 p-4 bg-black text-white">
             <div> <img src="<?php echo get_template_directory_uri() ?>/assets/img/logo.png" alt="PlatziGifts Logo"> </div>
+            <div>
+                <?php wp_nav_menu(array(
+                    'theme_location' => 'top_menu',
+                    'menu_class' => 'top-menu flex justify-center items-center gap-4 text-white',
+                    'container_class' => 'contaner-top-menu',
+                )) ?>
+            </div>
         </div>
     </header>
