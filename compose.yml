@@ -62,6 +62,14 @@ services:
     depends_on:
       db:
         condition: service_started
+  node:
+    build:
+      context: .
+      dockerfile: ./docker/development/node/Dockerfile
+      args:
+        UID: ${UID:-1000}
+        GID: ${GID:-1000}
+    tty: true
 networks:
   wordpress-development:
 volumes:

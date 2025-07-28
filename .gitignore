@@ -51,4 +51,5 @@ wp-config-local.php
 info.*
 database/backups/
 node_modules
+compose.override.yml
 # Ignore the following files in the root directory
