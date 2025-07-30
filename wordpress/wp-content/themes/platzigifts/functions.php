@@ -37,3 +37,35 @@ function sidebar()
 }
 
 add_action('widgets_init', 'sidebar');
+
+function product_type()
+{
+    register_post_type(
+        'product',
+        array(
+            'label' => __('Productos', 'platzigifts'),
+            'description' => __('Productos de platzi', 'platzigifts'),
+            'labels' => array(
+                'name' => __('Productos', 'platzigifts'),
+                'singular_name' => __('Producto', 'platzigifts'),
+                'menu_name' => __('Productos', 'platzigifts'),
+            ),
+            'supports' => array(
+                'title',
+                'editor',
+                'thumbnail',
+                'revisions',
+            ),
+            'public' => true,
+            'show_in_menu' => true,
+            'menu_position' => 5,
+            'menu_icon' => 'dashicons-cart',
+            'can_export' => true,
+            'publicly_queryable' => true,
+            'rewrite' => true,
+            'show_in_rest' => true,
+        )
+    );
+}
+
+add_action('init', 'product_type');
