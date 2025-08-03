@@ -12,6 +12,7 @@
                     <?php the_content(); ?>
                 </div>
             </div>
+            <?php get_template_part('template-parts/product-related'); ?>
         <?php endwhile; ?>
     <?php endif; ?>
 </main>
