@@ -17,14 +17,16 @@
         <?php if ($products->have_posts()): ?>
             <div class="grid grid-cols-3 gap-4">
                 <?php while ($products->have_posts()): $products->the_post(); ?>
-                    <div class="border p-4 rounded">
-                        <h3 class="text-xl"><?php the_title(); ?></h3>
-                        <?php if (has_post_thumbnail()): ?>
-                            <div class="mb-4">
-                                <?php the_post_thumbnail('medium'); ?>
-                            </div>
-                        <?php endif; ?>
-                    </div>
+                    <a href="<?php the_permalink(); ?>">
+                        <div class="border p-4 rounded">
+                            <h3 class="text-xl"><?php the_title(); ?></h3>
+                            <?php if (has_post_thumbnail()): ?>
+                                <div class="mb-4">
+                                    <?php the_post_thumbnail('medium'); ?>
+                                </div>
+                            <?php endif; ?>
+                        </div>
+                    </a>
                 <?php endwhile; ?>
             </div>
         <?php endif; ?>
