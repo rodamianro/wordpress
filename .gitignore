@@ -53,4 +53,6 @@ database/backups/
 node_modules
 compose.override.yml
 uploads
+# Exclude standard WordPress language files
+wordpress/wp-content/languages/
 # Ignore the following files in the root directory
