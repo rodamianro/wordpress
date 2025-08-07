@@ -62,10 +62,32 @@ function product_type()
             'menu_icon' => 'dashicons-cart',
             'can_export' => true,
             'publicly_queryable' => true,
-            'rewrite' => true,
+            'rewrite' => array('slug' => 'producto'),
             'show_in_rest' => true,
         )
     );
 }
 
 add_action('init', 'product_type');
+
+function products_categories_taxonomy()
+{
+    register_taxonomy(
+        'product_category',
+        array('product'),
+        array(
+            'label' => __('Categorías de Productos', 'platzigifts'),
+            'labels' => array(
+                'name' => __('Categorías de Productos', 'platzigifts'),
+                'singular_name' => __('Categoría de Productos', 'platzigifts'),
+            ),
+            'rewrite' => array('slug' => 'categoria-productos'),
+            'hierarchical' => true,
+            'show_in_rest' => true,
+            'show_in_nav_menu' => true,
+            'show_admin_column' => true,
+        )
+    );
+}
+
+add_action('init', 'products_categories_taxonomy');
