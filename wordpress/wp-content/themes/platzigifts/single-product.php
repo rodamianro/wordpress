@@ -9,9 +9,10 @@
                     <?php the_post_thumbnail('large'); ?>
                 </div>
                 <div>
-                    <?php the_content(); ?>
+                    <?php echo do_shortcode('[contact-form-7 id="0db84a4" title="Formulario de contacto 1"]');?>
                 </div>
             </div>
+            <?php the_content(); ?>
             <?php get_template_part('template-parts/product-related'); ?>
         <?php endwhile; ?>
     <?php endif; ?>
