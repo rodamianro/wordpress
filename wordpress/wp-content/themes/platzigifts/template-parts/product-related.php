@@ -1,9 +1,18 @@
  <?php
+    $taxonomies = get_the_terms(get_the_ID(), 'product_category');
     $query_args = array(
         'post_type' => 'product',
         'posts_per_page' => 6,
         'order' => 'ASC',
-        'orderby' => 'title'
+        'orderby' => 'title',
+        'post__not_in' => array(get_the_ID()),
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'product_category',
+                'field' => 'slug',
+                'terms' => $taxonomies ? $taxonomies[0]->slug : '',
+            ),
+        ), 
     );
     $products = new WP_Query($query_args);
     ?>
